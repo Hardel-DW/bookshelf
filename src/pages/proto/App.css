@@ -1,0 +1,62 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.controls label {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.controls input[type="range"] {
+  width: 200px;
+  height: 6px;
+  appearance: none;
+  background: #333;
+  border-radius: 3px;
+  outline: none;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.scene {
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(25deg) translateX(-64px) translateZ(-64px);
+}
