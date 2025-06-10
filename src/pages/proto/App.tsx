@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from 'react'
 import { useIsoRenderer } from './useIsoRenderer'
 import './App.css'
 
-interface Block { x: number; y: number; z: number }
+interface Block { x: number; y: number; z: number; type?: string }
 interface AnimatedBlock extends Block { targetY: number }
 
 const allPositions: Block[] = [
@@ -11,10 +11,12 @@ const allPositions: Block[] = [
     { x: 1, z: 0, y: 1 }, { x: 3, z: 0, y: 1 },
 ];
 
+const enchantingTable: Block = { x: 2, z: 2, y: 0, type: 'enchanting_table' };
+
 function App() {
     const [blockCount, setBlockCount] = useState(1)
     const canvasRef = useRef<HTMLCanvasElement>(null)
-    const [blocks, setBlocks] = useState<Block[]>([])
+    const [blocks, setBlocks] = useState<Block[]>([enchantingTable])
     const animatedBlocksRef = useRef<AnimatedBlock[]>([])
 
     const animate = useCallback(() => {
@@ -24,7 +26,7 @@ function App() {
         
         if (newBlocks.some((b, i) => b.y !== animatedBlocksRef.current[i]?.y)) {
             animatedBlocksRef.current = newBlocks
-            setBlocks(newBlocks)
+            setBlocks([enchantingTable, ...newBlocks])
             requestAnimationFrame(animate)
         }
     }, [])

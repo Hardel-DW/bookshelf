@@ -1,16 +1,5 @@
-@import "tailwindcss";
-
 body {
     background-color: #000;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-}
-
-@theme {
-    --bg-bookshelf: url('./assets/bookshelf.png');
-    --bg-oak-planks: url('./assets/oak_planks.png');
-}
-
-@utility pixelated {
-    image-rendering: pixelated;
 }

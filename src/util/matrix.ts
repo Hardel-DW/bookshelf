@@ -1,3 +1,10 @@
+/**
+ * @reference https://github.com/toji/gl-matrix/blob/master/src/mat4.js
+ * It's a simplified version of the gl-matrix library just to avoid download 65kb of code.
+ * 
+ * If you want use gl-matrix, you can delete this file and use it directly.
+ * import { mat4 } from 'gl-matrix';
+ */
 export const m4 = {
     create: () => new Float32Array([1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1]),
     perspective: (out: Float32Array, fov: number, aspect: number, near: number, far: number) => { const f = 1 / Math.tan(fov * 0.5), nf = 1 / (near - far); out.set([f/aspect, 0, 0, 0, 0, f, 0, 0, 0, 0, (far + near) * nf, -1, 0, 0, 2 * far * near * nf, 0]) },
