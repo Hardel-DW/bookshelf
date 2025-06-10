@@ -1,0 +1,36 @@
+.scene {
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(25deg) translateX(-64px) translateZ(-64px);
+}
+
+.block {
+  position: absolute;
+  width: 32px;
+  transform-style: preserve-3d;
+  transform: translate3d(var(--x), -200px, var(--z));
+  animation: fall 0.8s forwards;
+}
+
+.block-ground { 
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.block-air { 
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); 
+}
+
+.block-face {
+  position: absolute;
+  width: 32px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+@keyframes fall {
+  to { 
+    transform: translate3d(var(--x), var(--y), var(--z)); 
+  }
+} 
