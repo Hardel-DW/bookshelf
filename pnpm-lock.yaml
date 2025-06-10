@@ -26,12 +26,12 @@ importers:
     devDependencies:
       '@types/react':
         specifier: ^19.1.2
-        version: 19.1.6
+        version: 19.1.7
       '@types/react-dom':
         specifier: ^19.1.2
-        version: 19.1.6(@types/react@19.1.6)
+        version: 19.1.6(@types/react@19.1.7)
       '@vitejs/plugin-react-swc':
-        specifier: ^3.9.0
+        specifier: ^3.10.1
         version: 3.10.1(rolldown-vite@6.3.18(jiti@2.4.2))
       typescript:
         specifier: ~5.8.3
@@ -326,8 +326,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.1.6':
-    resolution: {integrity: sha512-JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==}
+  '@types/react@19.1.7':
+    resolution: {integrity: sha512-BnsPLV43ddr05N71gaGzyZ5hzkCmGwhMvYc8zmvI8Ci1bRkkDSzDDVfAXfN2tk748OwI7ediiPX6PfT9p0QGVg==}
 
   '@vitejs/plugin-react-swc@3.10.1':
     resolution: {integrity: sha512-FmQvN3yZGyD9XW6IyxE86Kaa/DnxSsrDQX1xCR1qojNpBLaUop+nLYFvhCkJsq8zOupNjCRA9jyhPGOJsSkutA==}
@@ -784,11 +784,11 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@types/react-dom@19.1.6(@types/react@19.1.6)':
+  '@types/react-dom@19.1.6(@types/react@19.1.7)':
     dependencies:
-      '@types/react': 19.1.6
+      '@types/react': 19.1.7
 
-  '@types/react@19.1.6':
+  '@types/react@19.1.7':
     dependencies:
       csstype: 3.1.3
 

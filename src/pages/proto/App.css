@@ -56,7 +56,15 @@
   border: none;
 }
 
-.scene {
-  transform-style: preserve-3d;
-  transform: rotateX(-15deg) rotateY(25deg) translateX(-64px) translateZ(-64px);
+.scene-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  width: 800px;
+  height: 600px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 }
