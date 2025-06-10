@@ -18,15 +18,11 @@ function App() {
     const animatedBlocksRef = useRef<AnimatedBlock[]>([])
 
     const animate = useCallback(() => {
-        let needsUpdate = false
-        const newBlocks = animatedBlocksRef.current.map(b => {
-            const diff = b.targetY - b.y
-            if (Math.abs(diff) < 0.1) return b
-            needsUpdate = true
-            return { ...b, y: b.y + diff * 0.1 }
-        }).filter(b => b.y > -25)
-
-        if (needsUpdate) {
+        const newBlocks = animatedBlocksRef.current
+            .map(b => Math.abs(b.targetY - b.y) < 0.1 ? b : { ...b, y: b.y + (b.targetY - b.y) * 0.1 })
+            .filter(b => b.y > -25)
+        
+        if (newBlocks.some((b, i) => b.y !== animatedBlocksRef.current[i]?.y)) {
             animatedBlocksRef.current = newBlocks
             setBlocks(newBlocks)
             requestAnimationFrame(animate)
