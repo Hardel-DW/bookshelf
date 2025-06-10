@@ -242,8 +242,6 @@ export function useIsoRenderer(canvasRef: React.RefObject<HTMLCanvasElement | nu
     }
 
     // Cancel previous animation and start new one
-    if (animFrameRef.current) {
-        cancelAnimationFrame(animFrameRef.current)
-    }
+    if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current)
     animFrameRef.current = requestAnimationFrame(render)
 } 
